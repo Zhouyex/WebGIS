@@ -117,6 +117,49 @@
 
       graphicsLayer.add(polygonGraphic);
 
+
+
+      var point ={
+        type:'point',
+        longitude:-118.29507,
+        latitude:34.13501
+      };
+
+
+      var simpleMarkerSymbol = {
+        type: "simple-marker",
+        color: [226, 119, 40],
+        outline: {
+          color: [255, 255, 255],
+          width: 1
+        }
+      };
+
+      //*** ADD ***//
+      // Create attributes
+      var attributes = {
+        Name: "My point",  // The name of the
+        Location: " Point Dume State Beach",  // The owner of the
+      };
+      // Create popup template
+      var popupTemplate = {
+        title: "{Name}",
+        content: "I am located at <b>{Location}</b>."
+      };
+
+      var pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol,
+        //*** ADD ***//
+        attributes: attributes,
+        popupTemplate: popupTemplate
+      });
+
+      graphicsLayer.add(pointGraphic);
+
+
+
+
     });
   </script>
 </head>
